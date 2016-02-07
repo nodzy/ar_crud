@@ -4,7 +4,7 @@ require_relative '../config/environment'
 class Assignment
 
 
-  def create_user(params)
+	def create_user(params)
     User.create(:username => params[:username], :password_digest => params[:password_digest])
 
     end
@@ -16,7 +16,7 @@ class Assignment
     end
 
 
-  def find_allusers(offset, limit)
+	def find_allusers(offset, limit)
     User.offset(offset).limit(limit).all.order(updated_at: :asc)
     
  
@@ -28,7 +28,7 @@ class Assignment
     end
 
  
-  def find_user_byname(username)
+	def find_user_byname(username)
     User.where(username: username)
 
     end 
@@ -39,7 +39,7 @@ class Assignment
     end     
 
 
-  def get_user_byid(id)
+	def get_user_byid(id)
     User.find_by(id: id)
      
     end
@@ -49,7 +49,7 @@ class Assignment
    
 
 
-  def update_password(id, password_digest)
+	def update_password(id, password_digest)
     User.find_by(id: id).update(password_digest: password_digest)
       
     end
@@ -60,7 +60,7 @@ class Assignment
     end 
 
 
-  def delete_user(id)
+	def delete_user(id)
     User.delete(id)
      
     end 
